@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Ettercap
+Comment=Multipurpose Network sniffer/analyser/interceptor/logger
+Exec=ettercap-pkexec -G
+Icon=/home/mrrobot/.local/bin/mrpanel-genmon-scripts/icons/ettercap-logo.svg
+Terminal=false
+Type=Application
+Categories=Network;
+Keywords=ettercap,ettercap-pkexec
+X-XFCE-Source=file:///usr/share/applications/ettercap.desktop
+Path=
+StartupNotify=false

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Mr.Manager
+Comment=Mr.Manager - Real-time view of running system 
+Exec=mrmanager
+Icon=video-display
+Path=
+Terminal=false
+StartupNotify=false

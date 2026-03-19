@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Mullvad VPN
+Exec="/usr/bin/mullvad-vpn" %U
+Terminal=false
+Type=Application
+Icon=mullvad-vpn
+StartupWMClass=Mullvad VPN
+Comment=Mullvad VPN client
+Categories=Network;
+X-XFCE-Source=file:///usr/share/applications/mullvad-vpn.desktop
+Path=
+StartupNotify=false

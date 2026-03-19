@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=MrManager
+Comment=Task Manager for Mr.RobotOS
+Exec=mrmanager
+Icon=org.xfce.genmon
+Path=
+Terminal=false
+StartupNotify=false

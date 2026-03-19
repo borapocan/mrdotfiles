@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Mr.Terminal
+Comment=Mr.RobotOS St Terminal
+Exec=st
+Icon=utilities-terminal
+Path=
+Terminal=false
+StartupNotify=false
