@@ -6,8 +6,8 @@
 xfce4-panel --disable-wm-check & disown
 
 ## Conky Themes
-#conky -c ~/.config/conky/Auva-Light/Auva-Light.conf &
-#conky -c ~/.config/conky/Auva-Light/Auva-Light2.conf &
+conky -c ~/.config/conky/Auva-Light/Auva-Light.conf &
+conky -c ~/.config/conky/Auva-Light/Auva-Light2.conf &
 
 # Start DWM Blocks
 dwmblocks >/dev/null 2>&1 &
