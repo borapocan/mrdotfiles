@@ -1,4 +1,5 @@
 #!/bin/sh
+export PATH="/usr/local/bin/mrblocks-scripts:/usr/local/bin/mrpanel-genmon-scripts:/usr/local/bin/system-scripts:$PATH"
 ~/.fehbg &
 conky -c ~/.config/conky/Auva-Light/Auva-Light.conf &
 conky -c ~/.config/conky/Auva-Light/Auva-Light2.conf &
