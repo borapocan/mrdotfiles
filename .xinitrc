@@ -2,7 +2,8 @@
 export PATH="/usr/local/bin/mrblocks-scripts:/usr/local/bin/mrpanel-genmon-scripts:/usr/local/bin/system-scripts:$PATH"
 
 ~/.fehbg &
-picom --config ~/.config/picom/picom.conf --daemon &
+#picom --config ~/.config/picom/picom.conf --daemon &
+picom &
 conky -c ~/.config/conky/Auva-Light/Auva-Light.conf &
 conky -c ~/.config/conky/Auva-Light/Auva-Light2.conf &
 exec dbus-run-session sh -c '
