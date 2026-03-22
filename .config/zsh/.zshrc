@@ -184,6 +184,8 @@ export LESS_TERMCAP_mb=$(tput bold; tput setaf 39)
 export LESS_TERMCAP_md=$(tput bold; tput setaf 45)
 export LESS_TERMCAP_me=$(tput sgr0)
 
-neofetch;
-export PATH=$PATH:$(go env GOPATH)/bin
-export PATH="$HOME/.local/bin:$PATH"
+#neofetch;
+#export PATH=$PATH:$(go env GOPATH)/bin
+#export PATH="$HOME/.local/bin:$PATH"
+command -v neofetch >/dev/null 2>&1 && neofetch
+command -v go >/dev/null 2>&1 && export PATH=$PATH:$(go env GOPATH)/bin
