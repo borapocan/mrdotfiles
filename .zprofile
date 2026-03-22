@@ -24,7 +24,7 @@ export BM_DIR=""
 export SSH_ENV="$HOME/.config/ssh/agent-environment"
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 # Adds `~/.local/bin` to $PATH
-export SCRIPTS="$(du "$HOME/.local/bin/"{mrblocks-scripts,mrpanel-genmon-scripts,system-scripts} | cut -f2 | paste -sd ':')"}
+export SCRIPTS="$(du "/usr/local/bin/"{mrblocks-scripts,mrpanel-genmon-scripts,system-scripts} | cut -f2 | paste -sd ':')"}
 export PATH="$PATH:$GOPATH/bin:$NPMBIN:$SCRIPTS"
 
 #Set bookmarks dir
@@ -42,3 +42,6 @@ lf() {
 	fi
 	rm -f -- "$tmp"
 }
+
+# Start X on login
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
