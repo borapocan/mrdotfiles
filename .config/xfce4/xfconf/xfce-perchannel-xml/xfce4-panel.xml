@@ -69,7 +69,7 @@
   <property name="plugins" type="empty">
     <property name="plugin-1" type="string" value="applicationsmenu">
       <property name="button-title" type="string" value=" "/>
-      <property name="button-icon" type="string" value="/home/mrrobot/Downloads/we_are_fsociety.png"/>
+      <property name="button-icon" type="string" value="/home/mrrobot/Pictures/we_are_fsociety.png"/>
       <property name="small" type="bool" value="false"/>
       <property name="show-generic-names" type="bool" value="true"/>
       <property name="show-tooltips" type="bool" value="false"/>
@@ -150,7 +150,7 @@
       </property>
     </property>
     <property name="plugin-2" type="string" value="genmon">
-      <property name="command" type="string" value="/home/mrrobot/.local/bin/mrpanel-genmon-scripts/search-panel.sh"/>
+      <property name="command" type="string" value="/usr/local/bin/mrpanel-genmon-scripts/search-panel.sh"/>
       <property name="use-label" type="bool" value="false"/>
       <property name="text" type="string" value="Search"/>
       <property name="update-period" type="int" value="30000"/>
@@ -162,7 +162,7 @@
       <property name="style" type="uint" value="0"/>
     </property>
     <property name="plugin-9" type="string" value="genmon">
-      <property name="command" type="string" value="/home/mrrobot/.local/bin/mrpanel-genmon-scripts/wifi-panel.sh"/>
+      <property name="command" type="string" value="/usr/local/bin/mrpanel-genmon-scripts/wifi-panel.sh"/>
       <property name="use-label" type="bool" value="false"/>
       <property name="text" type="string" value="(genmon)"/>
       <property name="update-period" type="int" value="1000"/>
@@ -170,7 +170,7 @@
       <property name="font" type="string" value="Cantarell 11"/>
     </property>
     <property name="plugin-15" type="string" value="genmon">
-      <property name="command" type="string" value="/home/mrrobot/.local/bin/mrpanel-genmon-scripts/battery-panel.sh"/>
+      <property name="command" type="string" value="/usr/local/bin/mrpanel-genmon-scripts/battery-panel.sh"/>
       <property name="use-label" type="bool" value="false"/>
       <property name="text" type="string" value="(genmon)"/>
       <property name="update-period" type="int" value="3000"/>
@@ -181,7 +181,7 @@
       <property name="style" type="uint" value="0"/>
     </property>
     <property name="plugin-26" type="string" value="genmon">
-      <property name="command" type="string" value="/home/mrrobot/.local/bin/mrpanel-genmon-scripts/memory-panel.sh"/>
+      <property name="command" type="string" value="/usr/local/bin/mrpanel-genmon-scripts/memory-panel.sh"/>
       <property name="use-label" type="bool" value="false"/>
       <property name="text" type="string" value="(genmon)"/>
       <property name="update-period" type="int" value="30000"/>
