@@ -1,42 +1,64 @@
 #!/usr/bin/env sh
 
-# Prints the current volume or 🔇 if muted.
-TERMINAL='st';
-icon=""
-
 case $BLOCK_BUTTON in
-	1) "$TERMINAL" -e pavucontrol; pkill -RTMIN+3 "${STATUSBAR:-dwmblocks}" ;;  # Left click to open pavucontrol
-	2) pamixer -t ;;  # Middle click to toggle mute
-	4) pamixer --increase 1 ;;  # Scroll up to increase volume by 1%
-	5) pamixer --decrease 1 ;;  # Scroll down to decrease volume by 1%
-	3) notify-send "📢 Volume module" "\- Shows volume 🔊, 🔇 if muted.
-- Middle click to mute.
-- Scroll to change." ;;  # Right click to show help
-	6) "$TERMINAL" -e "$EDITOR" "$0" ;;  # Open the script in editor on 6th click
+    1) st -e pavucontrol; pkill -RTMIN+3 "${STATUSBAR:-dwmblocks}" ;;
+    2) pamixer -t ;;
+    4) pamixer --increase 1 ;;
+    5) pamixer --decrease 1 ;;
+    3) notify-send "📢 Volume" "Scroll to change volume. Middle click to mute." ;;
 esac
 
-# Get current volume
-vol="$(pamixer --get-volume)"
+vol="$(pamixer --get-volume 2>/dev/null)"
+[ -z "$vol" ] && echo "🔇" && exit
 
-# If muted, print 🔇 and exit.
-[ "$vol" != "${vol%\[MUTED\]}" ] && echo 🔇 && exit
+[ "$(pamixer --get-mute 2>/dev/null)" = "true" ] && echo "🔇" && exit
 
-vol="${vol#Volume: }"
-
-split() {
-	# For ommiting the . without calling and external program.
-	IFS=$2
-	set -- $1
-	printf '%s' "$@"
-}
-
-vol="$(printf "%.0f" "$(split "$vol" ".")")"
-
+vol="$(printf "%.0f" "$vol")"
 case 1 in
-	$((vol >= 70)) ) icon="🔊" ;;
-	$((vol >= 30)) ) icon="🔉" ;;
-	$((vol >= 1)) ) icon="🔈" ;;
-	* ) echo "🔇" && exit ;;
+    $((vol >= 70)) ) icon="🔊" ;;
+    $((vol >= 30)) ) icon="🔉" ;;
+    $((vol >= 1))  ) icon="🔈" ;;
+    * ) echo "🔇" && exit ;;
 esac
-
 printf "%s %s " "$icon" "$vol%"
+
+# Prints the current volume or 🔇 if muted.
+#TERMINAL='st';
+#icon=""
+#
+#case $BLOCK_BUTTON in
+#	1) "$TERMINAL" -e pavucontrol; pkill -RTMIN+3 "${STATUSBAR:-dwmblocks}" ;;  # Left click to open pavucontrol
+#	2) pamixer -t ;;  # Middle click to toggle mute
+#	4) pamixer --increase 1 ;;  # Scroll up to increase volume by 1%
+#	5) pamixer --decrease 1 ;;  # Scroll down to decrease volume by 1%
+#	3) notify-send "📢 Volume module" "\- Shows volume 🔊, 🔇 if muted.
+#- Middle click to mute.
+#- Scroll to change." ;;  # Right click to show help
+#	6) "$TERMINAL" -e "$EDITOR" "$0" ;;  # Open the script in editor on 6th click
+#esac
+#
+## Get current volume
+#vol="$(pamixer --get-volume)"
+#
+## If muted, print 🔇 and exit.
+#[ "$vol" != "${vol%\[MUTED\]}" ] && echo 🔇 && exit
+#
+#vol="${vol#Volume: }"
+#
+#split() {
+#	# For ommiting the . without calling and external program.
+#	IFS=$2
+#	set -- $1
+#	printf '%s' "$@"
+#}
+#
+#vol="$(printf "%.0f" "$(split "$vol" ".")")"
+#
+#case 1 in
+#	$((vol >= 70)) ) icon="🔊" ;;
+#	$((vol >= 30)) ) icon="🔉" ;;
+#	$((vol >= 1)) ) icon="🔈" ;;
+#	* ) echo "🔇" && exit ;;
+#esac
+#
+#printf "%s %s " "$icon" "$vol%"
