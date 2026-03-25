@@ -2,7 +2,7 @@
 Version=1.0
 Type=Application
 Name=Mr.Terminal
-Comment=Mr.RobotOS St Terminal
+Comment=Mr.RobotOS Simple Terminal
 Exec=st
 Icon=utilities-terminal
 Path=
